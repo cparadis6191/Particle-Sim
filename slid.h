@@ -1,4 +1,5 @@
 #include "components/object.h"
 #include "components/render.h"
 #include "components/physics.h"
-#include "components/controls.h"
+#include "components/input.h"
+#include "components/canvas.h"
