@@ -9,7 +9,6 @@ class object;
 // Class dealing with input controls such as velocity, acceleration, number of particles
 class controls {
 	public:
-		virtual void update(object *particle);
 
 	private:
 };
