@@ -4,12 +4,14 @@ CFLAGS = -g -Wall
 LIBS = `sdl-config --libs` -lstdc++ # Libaries to be linked
 .PHONY:clean
 
+# CC is already defined and depends on the object being made
 ${TARGET}:${OBJS}
 	${CC} -o ${TARGET} ${OBJS} ${LIBS}
-# CC is already defined
+
+# This rule must be called explicitly
 clean:
 	rm -f *.o components/*.o ${TARGET}.exe core*
-# This rule must be called explicitly
+
 
 slid.o:slid.h
 components/canvas.o:components/canvas.h
