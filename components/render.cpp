@@ -9,4 +9,5 @@ render::~render() {
 }
 
 void render::update(object *particle, canvas *surface) {
+
 }
