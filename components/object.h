@@ -12,8 +12,11 @@ class render;
 // Class representing a single particle
 class object {
 	public:
-		virtual void update(physics *physics,
-							render *render);
+		object();
+		object(SDL_Rect * X_POS, int X_POS, int X_ACC, SDL_Rect * Y_POS, int Y_VEL, int Y_ACC);
+		~object();
+
+		virtual void update(physics *physics);
 
 		SDL_Surface * get_resource();
 
@@ -26,7 +29,6 @@ class object {
 		int get_Y_ACC();
 
 	private:
-		SDL_Surface * particle;
 		SDL_Rect * X_POS, * Y_POS;
 		int X_VEL, Y_VEL;
 		int X_ACC, Y_ACC;

@@ -11,6 +11,9 @@ class object;
 // Class to render the canvas and all particles (individually)
 class render {
 	public:
+		render();
+		~render();
+
 		// Renders a single particle
 		virtual void update(object *particle, canvas *canvas);
 

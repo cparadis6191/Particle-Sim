@@ -9,7 +9,7 @@ canvas::~canvas() {
 	// Free the canvas
 	SDL_FreeSurface(screen);
 
-	//
+	// Quits SDL
 	SDL_Quit();
 }
 
@@ -18,5 +18,5 @@ SDL_Surface * canvas::get_canvas() {
 }
 
 void canvas::update() {
-
+	SDL_Flip(screen);
 }
