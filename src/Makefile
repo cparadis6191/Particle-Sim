@@ -6,11 +6,11 @@ LIBS = `sdl-config --libs` -lstdc++ # Libaries to be linked
 
 # CC is already defined and depends on the object being made
 ${TARGET}:${OBJS}
-	${CC} -o ${TARGET} ${OBJS} ${LIBS}
+	${CC} -o ../${TARGET} ${OBJS} ${LIBS}
 
 # This rule must be called explicitly
 clean:
-	rm -f *.o components/*.o ${TARGET}.exe core*
+	rm -f *.o components/*.o ../${TARGET}.exe core*
 
 
 slid.o:slid.h
