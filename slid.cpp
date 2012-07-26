@@ -1,4 +1,3 @@
-#include <iostream>
 #include "SDL/SDL.h"
 
 #include "slid.h"
@@ -6,12 +5,13 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	canvas * screen = new canvas(300, 300, 8, SDL_SWSURFACE);
+
+	// Creates an object representing the screen
+	canvas * screen = new canvas(320, 240, 8, SDL_SWSURFACE);
 	render * renderer = new render();
-	object particle;
+	object * particle = new object("./graphics/duck.bmp", 0, 0, 0, 0, 0, 0);
 
-	SDL_Surface * const sprite = SDL_LoadBMP("./graphics/duck.bmp");
-
+	renderer->update(particle, screen);
 	screen->update();
 
 	SDL_Delay(500);
