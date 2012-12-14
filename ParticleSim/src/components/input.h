@@ -3,6 +3,7 @@
 
 #include "object.h"
 
+
 // Forward declarations
 class object;
 

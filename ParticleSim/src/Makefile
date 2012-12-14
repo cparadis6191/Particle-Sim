@@ -6,7 +6,7 @@ LIBS = -lmingw32 -lSDLmain -lSDL -lstdc++ # Libaries to be linked
 
 # CC is already defined and depends on the object being made
 ${TARGET}:${OBJS}
-	${CC} -o ../${TARGET} ${OBJS} ${LIBS}
+	${CC} -o ../${TARGET} ${OBJS} ${LIBS} ${CFLAGS}
 
 # This rule must be called explicitly
 clean:

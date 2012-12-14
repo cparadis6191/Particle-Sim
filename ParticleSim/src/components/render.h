@@ -4,6 +4,7 @@
 #include "object.h"
 #include "canvas.h"
 
+
 // Forward declarations
 class canvas;
 class object;

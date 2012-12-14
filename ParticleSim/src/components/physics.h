@@ -3,7 +3,8 @@
 
 #include "object.h"
 
-// Class dealing with collision detection and ?gravity?
+
+// Class dealing with physical properties of particles
 class physics {
 	public:
 		virtual void update(object *particle);

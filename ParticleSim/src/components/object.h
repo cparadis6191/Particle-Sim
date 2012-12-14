@@ -2,10 +2,11 @@
 #define _OBJECT_H__
 
 #include <string>
+#include <SDL/SDL.h>
 
 #include "input.h"
 #include "physics.h"
-#include "SDL/SDL.h"
+
 
 // Class representing a single particle
 class object {
@@ -17,15 +18,15 @@ class object {
 
 		~object();
 
-		SDL_Surface * get_resource();
+		SDL_Surface * get_resource(void);
 
-		SDL_Rect * get_POS();
+		SDL_Rect * get_POS(void);
 
-		int get_X_VEL();
-		int get_Y_VEL();
+		int get_X_VEL(void);
+		int get_Y_VEL(void);
 
-		int get_X_ACC();
-		int get_Y_ACC();
+		int get_X_ACC(void);
+		int get_Y_ACC(void);
 
 	private:
 		SDL_Surface * sprite;

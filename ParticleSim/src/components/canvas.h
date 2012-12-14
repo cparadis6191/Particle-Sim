@@ -1,11 +1,9 @@
 #ifndef _CANVAS_H__
 #define _CANVAS_H__
 
+#include <SDL/SDL.h>
 #include "object.h"
-#include "SDL/SDL.h"
 
-// Forward declaration of the object class
-//class object;
 
 // Class representing the canvas that particles are drawn on
 class canvas {
@@ -15,10 +13,10 @@ class canvas {
 		~canvas();
 
 		// Updates the entire canvas
-		virtual void update();
+		virtual void update(void);
 
 		// Get the screen resource
-		SDL_Surface * get_canvas();
+		SDL_Surface * get_resource(void);
 
 	private:
 		SDL_Surface * screen;

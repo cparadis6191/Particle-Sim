@@ -1,5 +1,6 @@
 #include "object.h"
 
+
 object::object(std::string resource_name,
 				int X_POS, int Y_POS,
 				int X_VEL, int Y_VEL,
@@ -7,10 +8,14 @@ object::object(std::string resource_name,
 
 	this->sprite = SDL_LoadBMP(resource_name.c_str());
 	// x, y coordinate pair gives position of upper left corner of the object
-	this->POS->x = X_POS;
-	this->POS->y = Y_POS;
-	this->POS->w = this->sprite->w;
-	this->POS->h = this->sprite->h;
+
+	// Alloate memory for the coordinates of the sprite
+	POS = new SDL_Rect;
+	POS->x = X_POS;
+	POS->y = Y_POS;
+
+	// Store the positions into the 
+	//POS = &coords;
 
 	// velocity is measured in pixels/second
 	this->X_VEL = X_VEL;
@@ -19,8 +24,8 @@ object::object(std::string resource_name,
 	// acceleration is measured in pixels/second^2
 	this->X_ACC = X_ACC;
 	this->Y_ACC = Y_ACC;
-
 }
+
 
 object::~object() {
 	SDL_FreeSurface(sprite);
