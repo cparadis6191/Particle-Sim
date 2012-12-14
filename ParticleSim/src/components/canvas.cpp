@@ -1,5 +1,4 @@
 #include "canvas.h"
-#include <iostream>
 
 canvas::canvas() {
 	SDL_Init(SDL_INIT_EVERYTHING);

@@ -1,7 +1,7 @@
 TARGET = slid
 OBJS = slid.o components/physics.o components/render.o components/object.o components/input.o components/canvas.o
 CFLAGS = -g -Wall
-LIBS = `sdl-config --libs` -lstdc++ # Libaries to be linked
+LIBS = -lmingw32 -lSDLmain -lSDL -lstdc++ # Libaries to be linked
 .PHONY:clean
 
 # CC is already defined and depends on the object being made
@@ -11,7 +11,6 @@ ${TARGET}:${OBJS}
 # This rule must be called explicitly
 clean:
 	rm -f *.o components/*.o ../${TARGET}.exe core*
-
 
 slid.o:slid.h
 components/canvas.o:components/canvas.h
