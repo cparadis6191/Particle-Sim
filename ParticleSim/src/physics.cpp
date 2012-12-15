@@ -2,14 +2,14 @@
 
 
 void physics::update(object *particle) {
+	// Gravity in this case
+	resolve_force(particle);
+
 	// Update the particle's position
 	resolve_position(particle);
 
 	// Prevent the ball from leaving the screen for now
 	resolve_collision(particle);
-
-	// Gravity in this case
-	resolve_force(particle);
 
 
 	return;
@@ -38,20 +38,21 @@ void physics::resolve_force(object *particle) {
 
 void physics::resolve_collision(object *particle) {
 	// Check for collision with walls
-	if (particle->get_POS()->x >= 319) {
+	// Account for particles of different sizes
+	if (particle->get_POS()->x >= (320 - particle->get_POS()->w)) {
 		particle->set_X_VEL(-particle->get_X_VEL());
-		particle->get_POS()->x = 319;
-	} else if (particle->get_POS()->x <= 1) {
+		particle->get_POS()->x = (320 - particle->get_POS()->w);
+	} else if (particle->get_POS()->x <= 0) {
 		particle->set_X_VEL(-particle->get_X_VEL());
-		particle->get_POS()->x = 1;
+		particle->get_POS()->x = 0;
 	}
 	// Check for collision with ceilings and floors
-	if (particle->get_POS()->y >= 239) {
+	if (particle->get_POS()->y >= (240 - particle->get_POS()->h)) {
 		particle->set_Y_VEL(-particle->get_Y_VEL());
-		particle->get_POS()->y = 239;
-	} else if (particle->get_POS()->y <= 1) {
+		particle->get_POS()->y = (240 - particle->get_POS()->h);
+	} else if (particle->get_POS()->y <= 0) {
 		particle->set_Y_VEL(-particle->get_Y_VEL());
-		particle->get_POS()->y = 1;
+		particle->get_POS()->y = 0;
 	}
 
 

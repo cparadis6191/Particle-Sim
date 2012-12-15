@@ -3,7 +3,10 @@
 
 canvas::canvas() {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	screen = SDL_SetVideoMode(320, 240, 8, SDL_SWSURFACE);
+	screen = SDL_SetVideoMode(320, 240, 32, SDL_SWSURFACE);
+
+
+	return;
 }
 
 
@@ -11,6 +14,9 @@ canvas::canvas() {
 canvas::canvas(int x_res, int y_res, int bits_per_pixel, int flags) {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	screen = SDL_SetVideoMode(x_res, y_res, bits_per_pixel, flags);
+
+
+	return;
 }
 
 
@@ -20,6 +26,9 @@ canvas::~canvas() {
 
 	// Quits SDL
 	SDL_Quit();
+
+
+	return;
 }
 
 
@@ -35,4 +44,7 @@ void canvas::update(void) {
 
 	// Clear the resource to objects don't linger
 	SDL_FillRect(screen, NULL, (uint32_t) 0);
+
+
+	return;
 }

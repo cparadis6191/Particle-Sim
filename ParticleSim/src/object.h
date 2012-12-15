@@ -1,7 +1,6 @@
 #ifndef _OBJECT_H__
 #define _OBJECT_H__
 
-#include <stdint.h>
 #include <string>
 #include <SDL/SDL.h>
 
@@ -12,14 +11,13 @@
 // Class representing a single particle
 class object {
 	public:
-		object(std::string resource_name,
+		object(
+				int height, int width,
 				int X_POS, int Y_POS,
 				int X_VEL, int Y_VEL,
 				int X_ACC, int Y_ACC);
 
 		~object();
-
-		SDL_Surface * get_resource(void);
 
 		SDL_Rect * get_POS(void);
 
@@ -38,7 +36,6 @@ class object {
 		void set_Y_ACC(int Y_ACC);
 
 	private:
-		SDL_Surface * sprite;
 		SDL_Rect * POS;
 		int X_VEL, Y_VEL;
 		int X_ACC, Y_ACC;

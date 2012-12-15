@@ -1,8 +1,8 @@
-#include <iostream>
-#include <stdlib.h>
-#include <stdint.h>
-#include <time.h>
 #include <SDL/SDL.h>
+
+#include <vector>
+#include <time.h>
+#include <stdlib.h>
 
 #include "slid.h"
 
@@ -11,40 +11,36 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	// Creates an object representing the screen
-	canvas * screen = new canvas(320, 240, 8, SDL_HWSURFACE);
+	canvas * screen = new canvas(320, 240, 32, SDL_HWSURFACE);
 	render * renderer = new render();
 	physics * phys = new physics();
 
-	object * particle = new object("./graphics/particle.bmp", 0, 0, -1, 0, 1, 1);
-	object * particle1 = new object("./graphics/particle.bmp", 0, 0, 2, 0, 1, 2);
-	object * particle2 = new object("./graphics/particle.bmp", 0, 0, 3, 0, 1, 3);
-	object * particle3 = new object("./graphics/particle.bmp", 0, 0, 4, 0, 1, 2);
-	object * particle4 = new object("./graphics/particle.bmp", 0, 0, 5, 0, 1, 2);
+	srand(time(NULL));
+	
+	vector<object *> particles;
+
+
+	for (int i = 0; i < 1000; i++) {
+		particles.push_back(new object(5, 5, 200*rand()/RAND_MAX, 200*rand()/RAND_MAX, 5*rand()/RAND_MAX, 5*rand()/RAND_MAX, 5*rand()/RAND_MAX, 5*rand()/RAND_MAX));
+
+	}
 
 
 	while (1) {
-		phys->update(particle);
-		phys->update(particle1);
-		phys->update(particle2);
-		phys->update(particle3);
-		phys->update(particle4);
+		for (vector<object *>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
+			phys->update(*particle);
 
-		// Draw each particle to the screen
-		renderer->update(particle, screen);
-		renderer->update(particle1, screen);
-		renderer->update(particle2, screen);
-		renderer->update(particle3, screen);
-		renderer->update(particle4, screen);
-
+			// Draw each particle to the screen
+			renderer->update(*particle, screen);
+		}
 
 		screen->update();
 
-
-		SDL_Delay(10);
+		SDL_Delay(25);
 	}
 
+
 	// Free the resources
-	delete particle;
 	delete screen;
 
 
