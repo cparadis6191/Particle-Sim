@@ -1,4 +1,6 @@
 #include "object.h"
+#include <stdio.h>
+#include <stdint.h>
 
 
 object::object(std::string resource_name,
@@ -29,6 +31,7 @@ object::object(std::string resource_name,
 
 object::~object() {
 	SDL_FreeSurface(sprite);
+	free(POS);
 }
 
 
