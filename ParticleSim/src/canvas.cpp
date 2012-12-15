@@ -15,6 +15,8 @@ canvas::canvas(int x_res, int y_res, int bits_per_pixel, int flags) {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	screen = SDL_SetVideoMode(x_res, y_res, bits_per_pixel, flags);
 
+	SDL_WM_SetCaption("Slid.exe", NULL);
+
 
 	return;
 }
