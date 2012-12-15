@@ -1,6 +1,7 @@
 #ifndef _CANVAS_H__
 #define _CANVAS_H__
 
+#include <stdint.h>
 #include <SDL/SDL.h>
 #include "object.h"
 

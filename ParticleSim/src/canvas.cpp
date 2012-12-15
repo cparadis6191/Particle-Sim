@@ -30,5 +30,9 @@ SDL_Surface * canvas::get_resource(void) {
 
 
 void canvas::update(void) {
+	// Draw things to the screen
 	SDL_Flip(screen);
+
+	// Clear the resource to objects don't linger
+	SDL_FillRect(screen, NULL, (uint32_t) 0);
 }

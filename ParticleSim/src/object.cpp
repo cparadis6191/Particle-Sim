@@ -1,6 +1,4 @@
 #include "object.h"
-#include <stdio.h>
-#include <stdint.h>
 
 
 object::object(std::string resource_name,
@@ -44,3 +42,9 @@ int object::get_X_ACC() { return X_ACC; }
 
 int object::get_Y_VEL() { return Y_VEL; }
 int object::get_Y_ACC() { return Y_ACC; }
+
+void object::set_X_VEL(int X_VEL) { this->X_VEL = X_VEL; }
+void object::set_X_ACC(int X_ACC) { this->X_ACC = X_ACC; }
+
+void object::set_Y_VEL(int Y_VEL) { this->Y_VEL = Y_VEL; }
+void object::set_Y_ACC(int Y_ACC) { this->Y_ACC = Y_ACC; }
