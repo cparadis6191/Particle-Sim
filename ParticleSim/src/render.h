@@ -16,7 +16,7 @@ class render {
 		~render();
 
 		// Renders a single particle
-		virtual void update(object *particle, canvas *surface);
+		virtual void update(object *particle, canvas *screen);
 
 	private:
 

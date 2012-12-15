@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	// Creates an object representing the screen
-	canvas * screen = new canvas(320, 240, 32, SDL_HWSURFACE);
+	canvas * screen = new canvas(640, 480, 32, SDL_HWSURFACE);
 	render * renderer = new render();
 	physics * phys = new physics();
 
@@ -20,15 +20,15 @@ int main(int argc, char *argv[]) {
 	vector<object *> particles;
 
 
-	for (int i = 0; i < 1000; i++) {
-		particles.push_back(new object(5, 5, 200*rand()/RAND_MAX, 200*rand()/RAND_MAX, 5*rand()/RAND_MAX, 5*rand()/RAND_MAX, 5*rand()/RAND_MAX, 5*rand()/RAND_MAX));
+	for (int i = 0; i < 100; i++) {
+		particles.push_back(new object(rand() % 5 + 5, rand() % 5 + 5, rand() % 500, rand() % 500, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() %6 - 3, rand() % 5));
 
 	}
 
 
 	while (1) {
 		for (vector<object *>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
-			phys->update(*particle);
+			phys->update(screen, *particle);
 
 			// Draw each particle to the screen
 			renderer->update(*particle, screen);

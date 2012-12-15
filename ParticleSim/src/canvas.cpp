@@ -3,7 +3,7 @@
 
 canvas::canvas() {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	screen = SDL_SetVideoMode(320, 240, 32, SDL_SWSURFACE);
+	screen = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
 
 
 	return;

@@ -15,7 +15,8 @@ class object {
 				int height, int width,
 				int X_POS, int Y_POS,
 				int X_VEL, int Y_VEL,
-				int X_ACC, int Y_ACC);
+				int X_ACC, int Y_ACC,
+				double friction);
 
 		~object();
 
@@ -28,6 +29,8 @@ class object {
 		int get_X_ACC(void);
 		int get_Y_ACC(void);
 
+		double get_friction(void);
+
 		// Public modifiers
 		void set_X_VEL(int X_VEL);
 		void set_X_ACC(int X_ACC);
@@ -39,6 +42,8 @@ class object {
 		SDL_Rect * POS;
 		int X_VEL, Y_VEL;
 		int X_ACC, Y_ACC;
+
+		double friction;
 };
 
 #endif

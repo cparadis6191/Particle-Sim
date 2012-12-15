@@ -14,9 +14,9 @@ render::~render() {
 
 
 // Blit particle to surface
-void render::update(object *particle, canvas *surface) {
+void render::update(object *particle, canvas *screen) {
 	// Draw a rectangle on the screen
-	SDL_FillRect(surface->get_resource(), particle->get_POS(), 0xFFFFFFFF);
+	SDL_FillRect(screen->get_resource(), particle->get_POS(), 0xFFFFFFFF);
 
 
 	return;

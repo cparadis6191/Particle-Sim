@@ -6,7 +6,8 @@ object::object(
 				int height, int width,
 				int X_POS, int Y_POS,
 				int X_VEL, int Y_VEL,
-				int X_ACC, int Y_ACC) {
+				int X_ACC, int Y_ACC,
+				double friction) {
 
 	// Allocate memory for the coordinates of the sprite
 	POS = new SDL_Rect;
@@ -22,6 +23,8 @@ object::object(
 	// acceleration is measured in pixels/second^2
 	this->X_ACC = X_ACC;
 	this->Y_ACC = Y_ACC;
+
+	this->friction = friction;
 
 
 	return;
