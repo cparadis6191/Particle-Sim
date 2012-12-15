@@ -24,12 +24,18 @@ object::object(std::string resource_name,
 	// acceleration is measured in pixels/second^2
 	this->X_ACC = X_ACC;
 	this->Y_ACC = Y_ACC;
+
+
+	return;
 }
 
 
 object::~object() {
 	SDL_FreeSurface(sprite);
 	free(POS);
+
+
+	return;
 }
 
 

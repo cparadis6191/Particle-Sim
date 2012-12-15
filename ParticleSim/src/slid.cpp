@@ -11,15 +11,15 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	// Creates an object representing the screen
-	canvas * screen = new canvas(320, 240, 8, SDL_SWSURFACE);
+	canvas * screen = new canvas(320, 240, 8, SDL_HWSURFACE);
 	render * renderer = new render();
 	physics * phys = new physics();
 
-	object * particle = new object("./graphics/particle.bmp", 0, 0, 1, 0, 0, 1);
-	object * particle1 = new object("./graphics/particle.bmp", 0, 0, 2, 0, 0, 2);
-	object * particle2 = new object("./graphics/particle.bmp", 0, 0, 3, 0, 0, 3);
-	object * particle3 = new object("./graphics/particle.bmp", 0, 0, 4, 0, 0, 2);
-	object * particle4 = new object("./graphics/particle.bmp", 0, 0, 5, 0, 0, 2);
+	object * particle = new object("./graphics/particle.bmp", 0, 0, -1, 0, 1, 1);
+	object * particle1 = new object("./graphics/particle.bmp", 0, 0, 2, 0, 1, 2);
+	object * particle2 = new object("./graphics/particle.bmp", 0, 0, 3, 0, 1, 3);
+	object * particle3 = new object("./graphics/particle.bmp", 0, 0, 4, 0, 1, 2);
+	object * particle4 = new object("./graphics/particle.bmp", 0, 0, 5, 0, 1, 2);
 
 
 	while (1) {

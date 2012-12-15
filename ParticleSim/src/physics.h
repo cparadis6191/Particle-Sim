@@ -9,6 +9,10 @@ class physics {
 	public:
 		virtual void update(object *particle);
 
+		void resolve_position(object *particle);
+		void resolve_force(object *particle);
+		void resolve_collision(object *particle);
+
 	private:
 };
 
