@@ -1,9 +1,7 @@
 #ifndef _CANVAS_H__
 #define _CANVAS_H__
 
-#include <stdint.h>
 #include <SDL/SDL.h>
-#include "object.h"
 
 
 // Class representing the canvas that particles are drawn on
@@ -11,7 +9,7 @@ class canvas {
 	public:
 		canvas();
 		canvas(int x_res, int y_res, int bits_per_pixel, int flags);
-		~canvas();
+		virtual ~canvas();
 
 		// Updates the entire canvas
 		virtual void update(void);

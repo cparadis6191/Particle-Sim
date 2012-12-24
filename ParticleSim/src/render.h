@@ -13,10 +13,10 @@ class object;
 class render {
 	public:
 		render();
-		~render();
+		virtual ~render();
 
 		// Renders a single particle
-		virtual void update(object *particle, canvas *screen);
+		virtual void draw(canvas *screen, object *particle);
 
 	private:
 

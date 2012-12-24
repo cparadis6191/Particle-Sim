@@ -7,6 +7,7 @@
 
 // Forward declaration
 class canvas;
+class object;
 
 // Class dealing with physical properties of particles
 class physics {

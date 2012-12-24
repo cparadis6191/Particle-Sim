@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 	vector<object *> particles;
 
 
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < atoi(argv[1]); i++) {
 		particles.push_back(new object(rand() % 5 + 5, rand() % 5 + 5, rand() % 500, rand() % 500, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() %6 - 3, rand() % 5));
 
 	}
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 			phys->update(screen, *particle);
 
 			// Draw each particle to the screen
-			renderer->update(*particle, screen);
+			renderer->draw(screen, *particle);
 		}
 
 		screen->update();

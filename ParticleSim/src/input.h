@@ -4,7 +4,7 @@
 #include "object.h"
 
 
-// Forward declarations
+// Forward declaration
 class object;
 
 // Class dealing with input controls such as velocity, acceleration, number of particles

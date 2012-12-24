@@ -1,12 +1,14 @@
 #ifndef _OBJECT_H__
 #define _OBJECT_H__
 
-#include <string>
 #include <SDL/SDL.h>
 
-#include "input.h"
 #include "physics.h"
+#include "input.h"
 
+
+// Forward declaration
+class input;
 
 // Class representing a single particle
 class object {
@@ -18,11 +20,16 @@ class object {
 				int X_ACC, int Y_ACC,
 				double friction);
 
+
 		~object();
 
-		SDL_Rect * get_POS(void);
 
 		// Public accessors
+		SDL_Rect * get_POS(void);
+
+		int get_X_POS(void);
+		int get_Y_POS(void);
+
 		int get_X_VEL(void);
 		int get_Y_VEL(void);
 
@@ -31,7 +38,11 @@ class object {
 
 		double get_friction(void);
 
+
 		// Public modifiers
+		void set_X_POS(int X_POS);
+		void set_Y_POS(int Y_POS);
+
 		void set_X_VEL(int X_VEL);
 		void set_X_ACC(int X_ACC);
 
