@@ -5,13 +5,16 @@
 #include "canvas.h"
 
 
-// Forward declaration
+// Forward declarations
 class canvas;
 class object;
 
 // Class dealing with physical properties of particles
 class physics {
 	public:
+		// Default constructor
+		physics(int w, int h);
+
 		virtual void update(canvas *screen, object *particle);
 
 		void resolve_position(object *particle);
@@ -19,6 +22,7 @@ class physics {
 		void resolve_collision(canvas *screen, object *particle);
 
 	private:
+		int *collision_matrix;
 };
 
 #endif

@@ -14,8 +14,10 @@ class canvas {
 		// Updates the entire canvas
 		virtual void update(void);
 
-		// Get the screen resource
+		// Public accessors
 		SDL_Surface * get_resource(void);
+		int get_screen_width(void);
+		int get_screen_height(void);
 
 	private:
 		SDL_Surface * screen;

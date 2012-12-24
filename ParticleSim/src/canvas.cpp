@@ -40,6 +40,11 @@ SDL_Surface * canvas::get_resource(void) {
 }
 
 
+// Returns the screen dimensions
+int canvas::get_screen_width(void) { return screen->w; }
+int canvas::get_screen_height(void) { return screen->h; }
+
+
 void canvas::update(void) {
 	// Draw things to the screen
 	SDL_Flip(screen);

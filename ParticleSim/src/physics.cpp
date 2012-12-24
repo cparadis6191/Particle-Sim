@@ -1,6 +1,14 @@
 #include "physics.h"
 
 
+physics::physics(int w, int h) {
+	collision_matrix = new int[w*h];
+
+
+	return;
+}
+
+
 void physics::update(canvas *screen, object *particle) {
 	// Gravity in this case
 	resolve_force(particle);
