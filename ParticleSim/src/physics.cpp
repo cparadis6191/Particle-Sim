@@ -9,7 +9,7 @@ physics::physics(int w, int h) {
 }
 
 
-void physics::update(canvas *screen, object *particle) {
+void physics::update(canvas* screen, object* particle) {
 	// Gravity in this case
 	resolve_force(particle);
 
@@ -24,7 +24,7 @@ void physics::update(canvas *screen, object *particle) {
 }
 
 
-void physics::resolve_position(object *particle) {
+void physics::resolve_position(object* particle) {
 	// Update the particle position
 	particle->get_POS()->x += particle->get_X_VEL();
 	particle->get_POS()->y += particle->get_Y_VEL();
@@ -34,7 +34,7 @@ void physics::resolve_position(object *particle) {
 }
 
 
-void physics::resolve_force(object *particle) {
+void physics::resolve_force(object* particle) {
 	// Update the particle velocity 
 	particle->set_X_VEL(particle->get_X_VEL() + particle->get_X_ACC());
 	particle->set_Y_VEL(particle->get_Y_VEL() + particle->get_Y_ACC());
@@ -44,7 +44,7 @@ void physics::resolve_force(object *particle) {
 }
 
 
-void physics::resolve_collision(canvas *screen, object *particle) {
+void physics::resolve_collision(canvas* screen, object* particle) {
 	// Check for collision with walls
 	// Account for particles of different sizes
 	if (particle->get_X_POS() >= (screen->get_resource()->w - particle->get_POS()->w)) {

@@ -39,7 +39,7 @@ object::~object() {
 }
 
 
-SDL_Rect * object::get_POS() { return POS; }
+SDL_Rect* object::get_POS() { return POS; }
 
 // Public accessor functions
 int object::get_X_POS(void) { return POS->x; } 

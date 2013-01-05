@@ -35,7 +35,7 @@ canvas::~canvas() {
 
 
 // Returns a pointer to the screen resource
-SDL_Surface * canvas::get_resource(void) {
+SDL_Surface* canvas::get_resource(void) {
 	return screen;
 }
 

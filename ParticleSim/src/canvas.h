@@ -15,12 +15,12 @@ class canvas {
 		virtual void update(void);
 
 		// Public accessors
-		SDL_Surface * get_resource(void);
+		SDL_Surface* get_resource(void);
 		int get_screen_width(void);
 		int get_screen_height(void);
 
 	private:
-		SDL_Surface * screen;
+		SDL_Surface* screen;
 };
 
 #endif

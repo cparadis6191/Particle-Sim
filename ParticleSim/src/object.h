@@ -25,7 +25,7 @@ class object {
 
 
 		// Public accessors
-		SDL_Rect * get_POS(void);
+		SDL_Rect* get_POS(void);
 
 		int get_X_POS(void);
 		int get_Y_POS(void);
@@ -50,7 +50,7 @@ class object {
 		void set_Y_ACC(int Y_ACC);
 
 	private:
-		SDL_Rect * POS;
+		SDL_Rect* POS;
 		int X_VEL, Y_VEL;
 		int X_ACC, Y_ACC;
 

@@ -9,17 +9,17 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char*argv[]) {
 	// Creates an object representing the screen
-	canvas * screen = new canvas(640, 480, 32, SDL_HWSURFACE);
-	render * renderer = new render();
-	physics * phys = new physics(screen->get_screen_width(), screen->get_screen_height());
+	canvas* screen = new canvas(640, 480, 32, SDL_HWSURFACE);
+	render* renderer = new render();
+	physics* phys = new physics(screen->get_screen_width(), screen->get_screen_height());
 
 
 
 	srand(time(NULL));
 	
-	vector<object *> particles;
+	vector<object*> particles;
 
 
 	for (int i = 0; i < atoi(argv[1]); i++) {
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
 
 	while (1) {
-		for (vector<object *>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
+		for (vector<object*>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
 			phys->update(screen, *particle);
 
 			// Draw each particle to the screen
