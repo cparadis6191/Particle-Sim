@@ -35,9 +35,7 @@ canvas::~canvas() {
 
 
 // Returns a pointer to the screen resource
-SDL_Surface* canvas::get_resource(void) {
-	return screen;
-}
+SDL_Surface* canvas::get_resource(void) { return screen; }
 
 
 // Returns the screen dimensions

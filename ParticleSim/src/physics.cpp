@@ -2,7 +2,26 @@
 
 
 physics::physics(int w, int h) {
-	collision_matrix = new int[w*h];
+	rows = h;
+	cols = w;
+
+	collision_matrix = new int*[rows];
+
+	for (int i = 0; i < rows; i++) {
+		collision_matrix[i] = new int[cols];
+	}
+
+
+	return;
+}
+
+
+physics::~physics() {
+	for (int i = 0; i < rows; i++) {
+		delete collision_matrix[i];
+	}
+
+	delete collision_matrix;
 
 
 	return;

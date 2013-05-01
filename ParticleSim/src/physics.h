@@ -1,8 +1,8 @@
 #ifndef _PHYSICS_H__
 #define _PHYSICS_H__
 
-#include "object.h"
 #include "canvas.h"
+#include "object.h"
 
 
 // Forward declarations
@@ -14,6 +14,7 @@ class physics {
 	public:
 		// Default constructor
 		physics(int w, int h);
+		~physics();
 
 		virtual void update(canvas* screen, object* particle);
 
@@ -22,7 +23,9 @@ class physics {
 		void resolve_collision(canvas* screen, object* particle);
 
 	private:
-		int* collision_matrix;
+		int** collision_matrix;
+		int rows;
+		int cols;
 };
 
 #endif

@@ -1,12 +1,12 @@
 TARGET = slid
 OBJS = slid.o canvas.o render.o object.o physics.o input.o
-CPPFLAGS = -g -Wall
-LIBS = -lmingw32 -lSDLmain -lSDL -lstdc++ # Libaries to be linked
+CXXFLAGS = -g -Wall
+LDFLAGS = -lmingw32 -lSDLmain -lSDL -lstdc++ # Libaries to be linked
 .PHONY:clean
 
 # CXX is already defined and depends on the object being made
 ${TARGET}:${OBJS}
-	${CXX} -o ../${TARGET} ${OBJS} ${LIBS}
+	${CXX} -o ../${TARGET} ${OBJS} ${LDFLAGS}
 
 slid.o:slid.h canvas.h render.h object.h physics.h input.h
 canvas.o:canvas.h
