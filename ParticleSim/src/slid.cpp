@@ -9,26 +9,37 @@
 
 using namespace std;
 
+
 int main(int argc, char*argv[]) {
+	const int FRAMES_PER_SECOND = 30;
+	const int SKIP_TICKS = 1000 / FRAMES_PER_SECOND;
+
+
 	// Creates an object representing the screen
 	canvas* screen = new canvas(640, 480, 32, SDL_HWSURFACE);
 	render* renderer = new render();
 	physics* phys = new physics(screen->get_screen_width(), screen->get_screen_height());
+	input* pc_input = new input();
 
-
-
+	// Seed the random number generator
 	srand(time(NULL));
 	
 	vector<object*> particles;
-
-
 	for (int i = 0; i < atoi(argv[1]); i++) {
-		particles.push_back(new object(rand() % 5 + 5, rand() % 5 + 5, rand() % 500, rand() % 500, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() %6 - 3, rand() % 5));
+		particles.push_back(new object(rand() % 5 + 5, rand() % 5 + 5, rand() % 640, rand() % 480, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() % 5));
 
 	}
 
 
-	while (1) {
+	// SDL_GetTicks() returns the current number of milliseconds
+	// that have elapsed since the system was started
+	Uint32 next_game_tick = SDL_GetTicks();
+	int sleep_time = 0;
+
+
+	while (pc_input->game_running()) {
+
+		// Update the game
 		for (vector<object*>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
 			phys->update(screen, *particle);
 
@@ -36,9 +47,22 @@ int main(int argc, char*argv[]) {
 			renderer->draw(screen, *particle);
 		}
 
+		// Check for user input
+		pc_input->process_input();
+		// Draw to the screen
 		screen->update();
 
-		SDL_Delay(25);
+
+		next_game_tick += SKIP_TICKS;
+		sleep_time = next_game_tick - SDL_GetTicks();
+
+		if (sleep_time >= 0) {
+			SDL_Delay(sleep_time);
+		}
+
+		else {
+			// Shit, we are running behind!
+		}
 	}
 
 
@@ -48,3 +72,6 @@ int main(int argc, char*argv[]) {
 
 	return 0;
 }
+
+
+

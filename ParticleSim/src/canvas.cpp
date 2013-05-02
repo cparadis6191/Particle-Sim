@@ -47,7 +47,7 @@ void canvas::update(void) {
 	// Draw things to the screen
 	SDL_Flip(screen);
 
-	// Clear the resource to objects don't linger
+	// Clear the resource so objects don't linger
 	SDL_FillRect(screen, NULL, (uint32_t) 0);
 
 
