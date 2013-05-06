@@ -16,11 +16,11 @@ class physics {
 		physics(int w, int h);
 		~physics();
 
-		virtual void update(canvas* screen, object* particle);
+		virtual void update(canvas& screen, object& particle);
 
-		void resolve_position(object* particle);
-		void resolve_force(object* particle);
-		void resolve_collision(canvas* screen, object* particle);
+		void resolve_position(object& particle);
+		void resolve_force(object& particle);
+		void resolve_collision(canvas& screen, object& particle);
 
 	private:
 		int** collision_matrix;
