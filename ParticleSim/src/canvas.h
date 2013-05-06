@@ -12,7 +12,7 @@ class canvas {
 		virtual ~canvas();
 
 		// Updates the entire canvas
-		virtual void update(void);
+		void update(void);
 
 		// Public accessors
 		SDL_Surface* get_resource(void);

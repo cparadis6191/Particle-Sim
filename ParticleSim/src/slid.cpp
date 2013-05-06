@@ -25,10 +25,9 @@ int main(int argc, char*argv[]) {
 	physics phys(screen.get_screen_width(), screen.get_screen_height());
 	input pc_input;
 
-	vector<object> particles;
+	vector<object*> particles;
 	for (int i = 0; i < atoi(argv[1]); i++) {
-		//particles.push_back(new object(rand() % 5 + 5, rand() % 5 + 5, rand() % 640, rand() % 480, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() % 5));
-		particles.push_back(object(3,3,0,0,0,0,1,1,0));
+		particles.push_back(new object(rand() % 5 + 5, rand() % 5 + 5, rand() % 640, rand() % 480, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() % 6 - 3, rand() % 5));
 
 	}
 
@@ -42,11 +41,11 @@ int main(int argc, char*argv[]) {
 	while (pc_input.game_running()) {
 
 		// Update the game
-		for (vector<object>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
-			phys.update(screen, *particle);
+		for (vector<object*>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
+			phys.update(screen, **particle);
 
 			// Draw each particle to the screen
-			renderer.draw(screen, *particle);
+			renderer.draw(screen, **particle);
 		}
 
 		// Check for user input
