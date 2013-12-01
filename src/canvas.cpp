@@ -5,7 +5,6 @@ canvas::canvas() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	screen = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
 
-
 	return;
 }
 
@@ -41,7 +40,6 @@ SDL_Surface* canvas::get_resource(void) { return screen; }
 // Returns the screen dimensions
 int canvas::get_screen_width(void) { return screen->w; }
 int canvas::get_screen_height(void) { return screen->h; }
-
 
 void canvas::update(void) {
 	// Draw things to the screen

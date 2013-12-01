@@ -68,6 +68,12 @@ int main(int argc, char*argv[]) {
 	}
 
 
+	// Free the particles
+	for (vector<object*>::iterator particle = particles.begin(); particle != particles.end(); particle++) {
+		delete *particle;
+	}
+
+
 	return 0;
 }
 

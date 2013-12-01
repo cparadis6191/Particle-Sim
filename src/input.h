@@ -3,6 +3,8 @@
 
 #include "object.h"
 
+#include <stdint.h>
+
 
 // Forward declaration
 class object;
@@ -18,6 +20,7 @@ class input {
 
 	private:
 		SDL_Event event;
+		Uint8* keystate;
 		bool game_is_running;
 };
 
