@@ -1,6 +1,6 @@
 TARGET = slid
 OBJS = slid.o canvas.o render.o object.o physics.o input.o
-CXXFLAGS = -g -Wall
+CXXFLAGS = -g -Wall -Wextra
 LDFLAGS = -lmingw32 -lSDLmain -lSDL -lstdc++ # Libaries to be linked
 .PHONY:clean
 
