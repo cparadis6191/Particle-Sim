@@ -23,7 +23,7 @@ Basic usage is as follows:
 
 ### Examples
 
-Each particle is given a random starting location, random velocity, and random acceleration. Collisions with the wall do not result in energy loss currently. If a particle has a non-zero acceleration it will eventually come to rest.
+Each particle is given a random starting location, random velocity, and random acceleration. Collisions with the walls do not result in energy loss currently. If a particle has a non-zero acceleration it will eventually come to rest.
 
 ```bash
 ./slid 50
