@@ -23,12 +23,14 @@ Basic usage is as follows:
 
 ### Examples
 
+Each particle is given a random starting location, random velocity, and random acceleration. Collisions with the wall do not result in energy loss currently. If a particle has a non-zero acceleration it will eventually come to rest.
+
 ```bash
 ./slid 50
 ```
 ![Original image](https://github.com/cparadis6191/Particle-Sim/blob/master/examples/particles.gif)
 
-This second example shows an interesting effect from the random distribution. A vague gridlike pattern can be seen which might be a result of my usage of the C random number functions or might be a limitation of the random generation itself (leaning towards my usage).
+This second example shows an interesting effect from the random distribution. A vague grid-like pattern can be seen which might be a result of my usage of the C random number functions or might be a limitation of the random generation itself (leaning towards my usage).
 
 ```bash
 ./slid 10000
